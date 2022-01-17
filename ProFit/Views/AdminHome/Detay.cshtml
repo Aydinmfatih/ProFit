@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ProFit.Models.pro_fitdb.quiz_answer>
+
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">İstek/Şikayetler</h5>
+        <div class="table-responsive">
+            <table id="zero_config"
+                   class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Mail</th>
+                        <th>1. Cevap</th>
+                        <th>2. Cevap</th>
+                        <th>3. Cevap</th>
+                        <th>4. Cevap</th>
+                        <th>5. Cevap</th>
+                        <th>6. Cevap</th>
+                        <th>7. Cevap</th>
+                        <th>8. Cevap</th>
+                        <th>9. Cevap</th>
+                        <th>10. Cevap</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model)
+                    {
+                    <tr>
+                        <td>@item.quiz_answer_DATE</td>
+                        <td>@item.quiz_answer_MAIL</td>
+                        <td>@item.quiz_ANSWER1</td>
+                        <th>@item.quiz_ANSWER2</th>
+                        <th>@item.quiz_ANSWER3</th>
+                        <th>@item.quiz_ANSWER4</th>
+                        <th>@item.quiz_ANSWER5</th>
+                        <th>@item.quiz_ANSWER6</th>
+                        <th>@item.quiz_ANSWER7</th>
+                        <th>@item.quiz_ANSWER8</th>
+                        <th>@item.quiz_ANSWER9</th>
+                        <th>@item.quiz_ANSWER10</th>
+                    </tr>
+
+                    }
+                </tbody>
+
+            </table>
+            <a href="../AdminHome/Index">
+                <button type="button"
+                        class="btn btn-cyan btn-sm text-white col-md-5 row-cols-4">
+                    Geri Dön
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "KaloriHesaplama";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="fh5co-parallax" style=" background-image:url(../../Content/images/kalori.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+                <div class="fh5co-intro fh5co-table-cell animate-box">
+                    <h1 class="text-center">Kalori Hesaplama </h1>
+                    <p>Kilo vermek,kilo olmak veya aynı kiloda kalmak için alman gereken kalorini hesaplamak istermisin ?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- end: fh5co-parallax -->
+
+<header>
+    <nav class="navbar navbar-dark orange">
+        <span style="color: white; font-size: 23px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            <i class="fas fa-calculator"></i> Kalori Hesaplama
+        </span>
+    </nav>
+</header>
+
+<main>
+    <p class="text-center font-weight-bold" style="margin-top: 25px; font-size: large;">Aşağıdaki formu doldurarak günlük kalori ihtiyacınızı hesaplayabilirsiniz</p>
+    <div class="card text-center border-warning-color-dark"
+         style="max-width: 50rem; margin: auto; border: 2px solid black; width: 50%; margin-top: 30px; min-width: 20rem; box-shadow: 4px 3px 9px; border-radius:5%">
+
+        <table class="table" style="border-spacing: 0rem;">
+            <form>
+            <tr>
+                <td class="T">Cinsiyet</td>
+                <td class="I">
+                    <input type="radio" name="gender" value="male" id="male" checked="checked"> Erkek &nbsp &nbsp
+                    <input type="radio" name="gender" value="female" id="female"> Kadın
+                </td>
+            </tr>
+            <tr>
+                <td class="T">Yaş</td>
+                <td class="I" id="AT">
+                    <input type="number" min="0" id="age" placeholder=""
+                           style="border-width: 2px; border-color: rgb(255, 123, 0); border-radius: 5px;"><div style="display: none;" id="ATT">Please enter valid number</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="T">Kilo</td>
+                <td class="I">
+                    <input type="number" min="0" id="weight"
+                           style="border-width: 2px; border-color: rgb(255, 123, 0); border-radius: 5px;" placeholder="Kg"><div style="display: none;" id="WTT">Please enter valid number</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="T">Boy</td>
+                <td class="I">
+                    <input type="number" min="0" id="height"
+                           style="border-width: 2px; border-color: rgb(255, 123, 0); border-radius: 5px;" placeholder="Cm"><div style="display: none;" id="HTT">Please enter valid number</div>
+                </td>
+            </tr>
+            </form>
+
+            <tr>
+                <td class="T">Haraketlilik seviyeniz<p></p></td>
+                <td>
+                    <select class="custom-select custom-select-sm"
+                            style="width: 70%; margin: auto; border-width: 2px; border-color: rgb(255, 123, 0); border-radius: 5px; margin-top: 12px;">
+                        <!--KONO DIO DA -->
+                        <option value="0" id="0">Bazal metabolizma (BMR)</option>
+                        <option value="1" id="1">Sedanter (Hareket etmiyorum veya çok az hareket ediyorum)</option>
+                        <option value="2" id="2">Az hareketli (Hafif hareketli bir yaşam / Haftada 1-3 gün egzersiz yapıyorum)</option>
+                        <option value="3" id="3">Orta derece hareketli (Hareketli bir yaşam / Haftada 3-5 gün egzersiz yapıyorum)</option>
+                        <option value="4" id="4">Çok hareketli (Çok hareketli bir yaşam / Haftada 6-7 gün egzersiz yapıyorum)</option>
+                        <option value="5" id="5">Aşırı hareketli (Profesyonel sporcu, atlet seviyesi)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <!-- UwU -->
+        <button id="B" type="button" onclick="calc()" class="btn btn-amber"
+                style="width: 300px; margin: auto; margin-bottom: 25px; border-radius: 25px;">
+           Hesapla
+        </button>
+    </div>
+
+    <!-- Score -->
+    <div id="Final" class="card text-center"
+         style="max-width: 55rem; margin: auto; border: 2px solid black !important; width: 30%; margin-top: 30px;
+        background-color: aliceblue !important; border-radius: 20px !important; color: rebeccapurple !important; display: none !important; margin-bottom: 30px !important ">
+        <table style="margin-top: 15px; " >
+            <tr>
+                <td class="T" style="font-weight: bold;">
+                   Kilonda kalman için gereken kalori <p></p>
+                </td>
+                <td><div id="a" class="SS">&nbsp</div><div class="CD">Kalori/günlük</div></td>
+            </tr>
+            <tr>
+                <td class="T" style="font-weight: bold;">
+                   Kilo vermen için gereken kalori <p style="font-size: small; color:#888; font-weight: lighter;"></p>
+                </td>
+                <td><div id="b" class="SS">&nbsp</div><div class="CD">Kalori/günlük</div></td>
+            </tr>
+            <tr>
+                <td class="T" style="font-weight: bold;">
+                    Kilo alman için gereken kalori <p style="font-size: small; color:#888; font-weight: lighter;"></p>
+                </td>
+                <td><div id="c" class="SS">&nbsp</div><div class="CD">Kalori/günlük</div></td>
+            </tr>
+        </table>
+    </div>
+
+</main>
+
+<div id="fh5co-blog-section">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</div>
+
+<script src="~/Script/js/ForCalorie.js"></script>

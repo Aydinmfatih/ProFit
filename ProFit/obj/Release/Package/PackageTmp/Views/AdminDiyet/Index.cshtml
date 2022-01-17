@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ProFit.Models.pro_fitdb.diet>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+
+    <div class="col-12">
+
+        <table class="table">
+            <div class="card-body">
+                <a href="../AdminDiyet/DiyetKaydet">
+                    <button type="button"
+                            class="btn btn-cyan btn-sm text-white">
+                        Diyet ekle
+                    </button>
+                </a>
+            </div>
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.diet_NAME) </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.diet_DESCRIPTION)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.diet_IMAGE)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.diet_INFO)   </th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@Html.DisplayFor(modelItem => item.diet_NAME)</td>
+                        <td>@Html.DisplayFor(modelItem => item.diet_DESCRIPTION)</td>
+                        <td>
+                            <img src="~/images/@item.diet_IMAGE"
+                                 alt="user"
+                                 width="100"
+                                 class="rounded-circle" />
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.diet_INFO)</td>
+
+
+                        <td>
+                            @Html.ActionLink("Güncelle","DietEdit", new { diet_ID = item.diet_ID })
+                            
+                        </td>
+                        <td>
+                            @Html.ActionLink("Sil", "DietDelete", new {diet_ID = item.diet_ID }, new { @class = "btn btn-danger btn-sm text-white" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+
+

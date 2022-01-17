@@ -1,0 +1,96 @@
+﻿@model IEnumerable<ProFit.Models.pro_fitdb.site_settings>
+
+<div class="container">
+    <div class="nav-header">
+        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+        @foreach (var item in Model)
+        {
+            <a href="../Home/Index">
+                <img src="~/images/@item.site_settings_LOGO" width="150px" height="60px" />
+            </a>
+        }
+
+        <nav id="fh5co-menu-wrap" role="navigation">
+            <ul class="sf-menu" id="fh5co-primary-menu">
+                @*<li class="active">
+                        <a href="index.html">Home</a>
+                    </li>*@
+                <li>
+                    <a href="#" class="fh5co-sub-ddown">PROGRAMLAR</a>
+                    <ul class="fh5co-sub-menu">
+                        <li>
+                            <a href="#">Fitness</a>
+                            <ul class="fh5co-sub-menu">
+                                <li><a href="../Program/FitnessBaslangicSeviyesi" target="_blank">Başlangıç Seviyesi</a></li>
+                                <li><a href="../Program/FitnessOrtaSeviyesi" target="_blank">Orta Seviye</a></li>
+                                <li><a href="../Program/FitnessIleriSeviyesi" target="_blank">İleri Seviye</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Yoga</a>
+                            <ul class="fh5co-sub-menu">
+                                <li><a href="../Program/YogaBaslangicSeviyesi" target="_blank">Başlangıç Seviyesi</a></li>
+                                <li><a href="../Program/YogaBaslangicSeviyesi" target="_blank">Orta Seviye</a></li>
+                                <li><a href="../Program/YogaBaslangicSeviyesi" target="_blank">İleri Seviye</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="fh5co-sub-ddown">Pilates</a>
+                            <ul class="fh5co-sub-menu">
+                                <li><a href="../Program/PilatesBaslangicSeviyesi" target="_blank">Başlangıç Seviyesi</a></li>
+                                <li><a href="../Program/PilatesBaslangicSeviyesi" target="_blank">Orta Seviye</a></li>
+                                <li><a href="../Program/PilatesBaslangicSeviyesi" target="_blank">İleri Seviye</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                <li>
+                    <a href="#" class="fh5co-sub-ddown">BESLENME</a>
+                    <ul class="fh5co-sub-menu">
+                        <li>
+                            <a href="../Beslenme/FitYemek">Fit Yemek</a>
+                        </li>
+                        <li>
+                            <a href="../Beslenme/DiyetProgramlari" class="fh5co-sub-ddown">Diyet Programları</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">HESAPLAMALAR</a>
+                    <ul class="fh5co-sub-menu">
+                        <li>
+                            <a href="../Hesaplamalar/VKIHesaplama">Vücut Kitle İndeksi Hesapla</a>
+                        </li>
+                        <li>
+                            <a href="../Hesaplamalar/KaloriHesaplama">Kalori Hesaplama</a>
+                        </li>
+                        <li>
+                            <a href="../Hesaplamalar/Quiz" class="fh5co-sub-ddown">Kendini Tanıma Quizi</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">İLETİŞİM</a>
+                    <ul class="fh5co-sub-menu">
+                        <li>
+                            <a href="../Iletisim/SSS">S.S.S.</a>
+                        </li>
+                        <li>
+                            <a href="../Iletisim/IstekSikayet">İstek / Şikayet</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+
+</div>
+@foreach (var item in Model)
+{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a href="@item.site_settings_TWITTER" class="fa fa-twitter" style="padding: 20px;font-size: 30px;width: 50px;float:right; margin-right:15%" target="_blank"></a>
+    <a href="@item.site_settings_YOUTUBE" class="fa fa-youtube" style="padding: 20px;font-size: 30px;width: 50px;float:right" target="_blank"></a>
+    <a href="@item.site_settings_INSTAGRAM" class="fa fa-instagram" style="padding: 20px;font-size: 30px;width: 50px;float:right" target="_blank"></a>
+}

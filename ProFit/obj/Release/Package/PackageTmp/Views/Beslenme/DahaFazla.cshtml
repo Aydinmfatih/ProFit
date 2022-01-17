@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ProFit.Models.pro_fitdb.foods>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="fh5co-page">
+
+    <div class="fh5co-parallax" style=" background-image:url(../Content/images/fityemek.jpg);" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+                    @foreach(var item in Model) {
+                    <div class="fh5co-intro fh5co-table-cell animate-box">
+                        <h1 class="text-center">@item.food_NAME</h1>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div><!-- end: fh5co-parallax -->
+    <!-- end:fh5co-hero -->
+    <div id="fh5co-team-section">
+        <div class="container">
+            <div class="row about">
+                @foreach(var item in Model) {
+                <div class="col-md-12 col-md-offset-0">
+                    <img class="img-responsive animate-box" src="../Content/images/makarna.jpg" alt="About">
+                </div>
+                <div class="col-md-12 col-md-offset-0 animate-box">
+                    <p>@item.food_NAME</p>
+                    <blockquote>
+                        <p>
+                          @item.food_CONTENT
+                        </p>
+                    </blockquote>
+                    <p>@item.food_RECIPE</p>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container mt-5" style="background-color:aliceblue">
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-8">
+                    <div class="d-flex flex-column comment-section">
+                        <div class="bg-white p-2">
+                            <div class="d-flex flex-row user-info">
+                                <img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40" style="border-radius:50px"><span class="d-block font-weight-bold name">Mine Nur Kaya       </span>
+                                <div class="d-flex flex-column justify-content-start ml-2"><span class="date text-black-50">   kasım 2021</span></div>
+                            </div>
+                            <div class="mt-2">
+                                <p class="comment-text">Vücudumun değiştiğini daha ilk haftadan hissedebiliyorum. Siz ve ekibinize çook teşekkür ederim..</p>
+                            </div>
+                        </div>
+                        <div class="bg-white">
+                            <div class="d-flex flex-row fs-12">
+                                <span class="likebtn-wrapper" data-identifier="item_1"></span>
+                                <script>(function (d, e, s) { if (d.getElementById("likebtn_wjs")) return; a = d.createElement(e); m = d.getElementsByTagName(e)[0]; a.async = 1; a.id = "likebtn_wjs"; a.src = s; m.parentNode.insertBefore(a, m) })(document, "script", "//w.likebtn.com/js/w/widget.js");</script>
+                                <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Yorum</span></div>
+                                <div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Paylaş</span></div>
+
+                            </div>
+                        </div>
+
+                        <div class="bg-light p-2">
+
+                            <div class="d-flex flex-row align-items-start">
+                                <img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40" style="border-radius:50px">
+                                <label>Kullanıcı adı</label> <input type="text"><textarea class="form-control ml-1 shadow-none textarea"></textarea>
+                            </div>
+                            <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button">Yorumu paylaş</button><button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">İptal et</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+

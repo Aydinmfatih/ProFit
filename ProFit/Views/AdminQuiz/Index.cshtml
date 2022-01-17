@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ProFit.Models.pro_fitdb.quiz_question>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+
+    <div class="col-12">
+
+        <table class="table">
+            <div class="card-body">
+                <a href="../AdminQuiz/QuizKaydet">
+                    <button type="button"
+                            class="btn btn-cyan btn-sm text-white">
+                        Quiz ekle
+                    </button>
+                </a>
+            </div>
+            <thead>
+                <tr>
+
+                    <th scope="col">@Html.DisplayNameFor(model => model.quiz_question_NAME) </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.quiz_QUESTION1)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.quiz_QUESTION2)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.quiz_QUESTION3)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.quiz_QUESTION4)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.quiz_QUESTION5)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.quiz_QUESTION6)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.quiz_QUESTION7)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.quiz_QUESTION8)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.quiz_QUESTION9)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.quiz_QUESTION10)   </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+
+                        <td>@Html.DisplayFor(modelItem => item.quiz_question_NAME)</td>
+                        <td>@Html.DisplayFor(modelItem => item.quiz_QUESTION1)</td>
+                        <td>@Html.DisplayFor(modelItem => item.quiz_QUESTION2)</td>
+                        <td>@Html.DisplayFor(modelItem => item.quiz_QUESTION3)</td>
+                        <td>@Html.DisplayFor(modelItem => item.quiz_QUESTION4)</td>
+                        <td>@Html.DisplayFor(modelItem => item.quiz_QUESTION5)</td>
+                        <td>@Html.DisplayFor(modelItem => item.quiz_QUESTION6)</td>
+                        <td>@Html.DisplayFor(modelItem => item.quiz_QUESTION7)</td>
+                        <td>@Html.DisplayFor(modelItem => item.quiz_QUESTION8)</td>
+                        <td>@Html.DisplayFor(modelItem => item.quiz_QUESTION9)</td>
+                        <td>@Html.DisplayFor(modelItem => item.quiz_QUESTION10)</td>
+
+                        <td>
+                            @Html.ActionLink("Güncelle", "QuizEdit", new { quiz_question_ID = item.quiz_question_ID }, new { @class = "btn btn-cyan btn-sm text-white" })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Sil", "QuizDelete", new { quiz_question_ID = item.quiz_question_ID }, new { @class = "btn btn-danger btn-sm text-white" })
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+

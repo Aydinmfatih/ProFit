@@ -1,0 +1,98 @@
+﻿@using ProFit.Models.pro_fitdb
+@model login
+
+@{
+    ViewBag.Title = "SifreDegistirme";
+    Layout = "~/Views/Shared/_AdminLoginLayout.cshtml";
+}
+
+
+
+<style>
+    * {
+        background-color: #343a40 !important;
+    }
+
+    }
+
+    body {
+        background-position: center;
+        opacity: 0.9;
+    }
+</style>
+<div class="main-wrapper ">
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div class="
+          auth-wrapper
+          d-flex
+          no-block
+          justify-content-center
+          align-items-center
+          bg-dark">
+        <div class="auth-box bg-dark border-top border-secondary">
+            <div id="loginform">
+                <div class="text-center pt-3 pb-3">
+                    <span class="db">
+                        <img src="~/Content/images/logo.png" alt="logo" style="width: 250px; height:115px;">
+                    </span>
+                </div>
+
+                @using (Html.BeginForm("SifreDegistirme", "AdminLogin", FormMethod.Post))
+                {
+                    <div class="row pb-4">
+                        <div class="col-12">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-success text-white h-100"
+                                          id="basic-addon1">
+                                        <i class="mdi mdi-account fs-4"></i>
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.login_NAME, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
+
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-warning text-white h-100"
+                                          id="basic-addon2">
+                                        <i class="mdi mdi-lock fs-4"></i>
+                                    </span>
+                                </div>
+                                @Html.EditorFor(model => model.login_PASSWORD, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
+
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background-color :#343a40;" class="row border-top border-secondary">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <div class="pt-3">
+
+                                    <a href="../AdminHome/Index">
+                                        <button class="btn btn-success float-end text-white"
+                                                type="submit">
+                                            Değiştir
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+

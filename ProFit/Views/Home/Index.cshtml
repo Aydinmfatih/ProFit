@@ -1,0 +1,198 @@
+﻿@using ProFit.Models.pro_fitdb
+@model ModelView
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="fh5co-heros">
+    <div class="fh5co-overlay"></div>
+    <div class="fh5co-cover" data-stellar-background-ratio="0.5" style=" background-image: url(../Content/images); background-image: url('../../Content/images/High_resolution_wallpaper_background_ID_77702074884.jpg');">
+        <div class="desc animate-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h2>Fitness &amp; Sağlık <br>sizin için <b>Buradayız</b></h2>
+                        <p><span>  <a href="../Home/Index" class="fh5co-site-name"><span style="display: inline; font-weight: bold; color: forestgreen; font-size:50px">Pro</span>fesyonel <span style="font-size: 50px; color: green; font-weight: bold; display: inline ">Fit</span>ness</a></span></p>
+                        <span><a class="btn btn-primary" href="#">Programlarımız için tıklayınız</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end:fh5co-hero -->
+    <div id="fh5co-schedule-section" class="fh5co-lightgray-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="heading-section text-center animate-box">
+                        <h2>Fit Yemekler</h2>
+                        <p>Fit Yemek Tarifleri </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row animate-box">
+                <div class="row text-center">
+
+                    <div class="col-md-12 schedule-container">
+                        @foreach (var item in Model.Foods)
+                        {
+                            <div class="schedule-content active" data-day="sunday">
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="program program-schedule">
+                                        <img src="../images/@item.food_IMAGE" alt="makarna">
+                                        <small>@item.food_NAME </small>
+                                        <span>Admin </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        }
+                        <!-- END sched-content -->
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fh5co-parallax" style="        background-image: url(../Content/images/vücut.jpg);" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+                    <div class="fh5co-intro fh5co-table-cell animate-box">
+                        <h1 class="text-center"> En güzel giysilerinden biri kendi vücudundur. Ona iyi bak!</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end: fh5co-parallax -->
+    <div id="fh5co-programs-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="heading-section text-center animate-box">
+                        <h2>Spor Programlarımız</h2>
+                        <p>Seviye seviye belirlenmiş antreman programlarımızdan yararlanın</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4 col-sm-6">
+                    <div class="program animate-box">
+                        <img src="../Content/images/dumbell.png" alt="Cycling">
+                        <h3>Fitness programları</h3>
+                        <p>Fitness için seviye seviye antreman programları </p>
+                        <span><a href="#" class="btn btn-default">Devam et</a></span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="program animate-box">
+                        <img src="../Content/images/yoga.png" alt="">
+                        <h3>Yoga programları</h3>
+                        <p>Yoga için seviye seviye antreman programları </p>
+                        <span><a href="#" class="btn btn-default">Devam et</a></span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="program animate-box">
+                        <img src="../Content/images/pilates.png" alt="">
+                        <h3>Pilates programları</h3>
+                        <p>Pilates için seviye seviye antreman programları </p>
+                        <span><a href="#" class="btn btn-default">Devam et</a></span>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+        <div id="fh5co-team-section" class="fh5co-lightgray-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="heading-section text-center animate-box">
+                            <h2>Antrenörlerimizle tanış</h2>
+                            <p>Alanında uzman antrenörlerimizle iletişim kur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-section-grid animate-box" style=" background-image: url(../Content/images/trainer.jpg); background-position: center;">
+                            <div class="overlay-section">
+                                <div class="desc">
+                                    <h3>Kadir Halı</h3>
+                                    <span>Fitness Antrenörü</span>
+                                    <p>2. Kademe Federasyon belgeli fitness antrenör</p>
+                                    <p class="fh5co-social-icons">
+                                        <a href="#"><i class="icon-twitter-with-circle"></i></a>
+                                        <a href="#"><i class="icon-facebook-with-circle"></i></a>
+                                        <a href="#"><i class="icon-instagram-with-circle"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-section-grid animate-box" style=" background-image: url(../Content/images/trainer.jpg); background-position: center;">
+                            <div class="overlay-section">
+                                <div class="desc">
+                                    <h3>Kadir Halı</h3>
+                                    <span>Fitness Antrenörü</span>
+                                    <p>2. Kademe Federasyon belgeli fitness antrenör</p>
+                                    <p class="fh5co-social-icons">
+                                        <a href="#"><i class="icon-twitter-with-circle"></i></a>
+                                        <a href="#"><i class="icon-facebook-with-circle"></i></a>
+                                        <a href="#"><i class="icon-instagram-with-circle"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-section-grid animate-box" style=" background-image: url(../Content/images/trainer.jpg); background-position: center;">
+                            <div class="overlay-section">
+                                <div class="desc">
+                                    <h3>Kadir Halı</h3>
+                                    <span>Fitness Antrenörü</span>
+                                    <p>2. Kademe Federasyon belgeli fitness antrenör</p>
+                                    <p class="fh5co-social-icons">
+                                        <a href="#"><i class="icon-twitter-with-circle"></i></a>
+                                        <a href="#"><i class="icon-facebook-with-circle"></i></a>
+                                        <a href="#"><i class="icon-instagram-with-circle"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-section-grid animate-box" style=" background-image: url(../Content/images/trainer.jpg); background-position: center;">
+                            <div class="overlay-section">
+                                <div class="desc">
+                                    <h3>Kadir Halı</h3>
+                                    <span>Fitness Antrenörü</span>
+                                    <p>2. Kademe Federasyon belgeli fitness antrenör</p>
+                                    <p class="fh5co-social-icons">
+                                        <a href="#"><i class="icon-twitter-with-circle"></i></a>
+                                        <a href="#"><i class="icon-facebook-with-circle"></i></a>
+                                        <a href="#"><i class="icon-instagram-with-circle"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProFit.Models.pro_fitdb.training_program>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+
+    <div class="col-12">
+
+        <table class="table">
+            <div class="card-body">
+                <a href="../AdminProgram/ProgramKaydet">
+                    <button type="button"
+                            class="btn btn-cyan btn-sm text-white">
+                        Program ekle
+                    </button>
+                </a>
+            </div>
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.category_ID) </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.training_NAME)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.training_DESCRIPTION)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.training_IMAGE)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.training_INFO)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.training_youtube_LINK)   </th>
+                  
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+
+                    <td>@Html.DisplayFor(modelItem => item.category_ID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.training_NAME)</td>
+                    <td>@Html.DisplayFor(modelItem => item.training_DESCRIPTION)</td>
+                    <td>
+                        <img src="~/images/@item.training_IMAGE"
+                             alt="user"
+                             width="100"
+                             class="rounded-circle" />
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.training_INFO)</td>
+                    <td>@Html.DisplayFor(modelItem => item.training_youtube_LINK)</td>
+
+
+                    <td>
+                        @Html.ActionLink("Güncelle", "ProgramEdit", new { training_ID = item.training_ID })
+
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sil", "ProgramDelete", new { training_ID = item.training_ID }, new { @class = "btn btn-danger btn-sm text-white" })
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+
+

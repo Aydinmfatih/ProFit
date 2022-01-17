@@ -1,0 +1,95 @@
+﻿@model IEnumerable<ProFit.Models.pro_fitdb.site_settings>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+
+
+            <thead>
+                <tr>
+                    <th scope="col">        </th>
+                    <th scope="col">        </th>
+
+                    <th scope="col"> X  </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>LOGO</td>
+                        <th scope="row">
+                            <img src="~/images/@item.site_settings_LOGO"
+                                 alt="user"
+                                 width="100"
+                                 class="rounded-circle" />
+
+                        </th>
+                        <td>     </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            TELEFON NUMARASI
+                        </th>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.site_settings_PHONE)
+                        </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            MAİL ADRESİ
+                        </th>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.site_settings_MAIL)
+                        </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            YOUTUBE LİNK
+                        </th>
+                        <td>
+                            <a href="../AdminSiteAyarlari/SiteGuncelle">
+                                @Html.DisplayFor(modelItem => item.site_settings_YOUTUBE)
+                        </td>
+                        <td>
+                            @*<a href="../AdminSiteAyarlari/SiteAyarlariEdit">
+                                    <button type="button"
+                                            class="btn btn-cyan btn-sm text-white col-md-5 row-cols-4">
+                                        Güncelle
+                                    </button>
+                                </a>
+                                </a>*@
+                            @Html.ActionLink("Güncelle", "SiteAyarlariEdit", new { site_settings_ID = item.site_settings_ID }, new { @class = "btn btn-cyan btn-sm text-white col-md-5 row-cols-4" })
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            TWİTTER LİNK
+                        </th>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.site_settings_TWITTER)
+                        </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            İNSTAGRAM LİNK
+                        </th>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.site_settings_INSTAGRAM)
+                        </td>
+                        <td> </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

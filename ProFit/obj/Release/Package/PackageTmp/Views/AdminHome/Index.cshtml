@@ -1,0 +1,68 @@
+﻿@using ProFit.Models.pro_fitdb
+@model ModelView
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">İstek/Şikayetler</h5>
+        <div class="table-responsive">
+            <table id="zero_config"
+                   class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Mail</th>
+                        <th>İstek/Şikayet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model.request_Complaints) {
+                    <tr>
+                        <td>@item.request_complaint_DATE</td>
+                        <td>@item.request_complaint_MAIL</td>
+                        <td>@item.request_complaint_DESCRIPTION</td>
+                    </tr>
+                    }
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Quiz Sonuçları</h5>
+        <div class="table-responsive">
+            <table id="zero_config"
+                   class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Mail</th>
+                        <th>   </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model.quiz_Answers) {
+                    <tr>
+                        <td>@item.quiz_answer_DATE</td>
+                        <td>@item.quiz_answer_MAIL</td>
+                        <td>
+                            <a href="../AdminHome/Detay?id=@item.quiz_answer_ID">
+                                <button type="button"
+                                        class="btn btn-cyan btn-sm text-white col-md-5 row-cols-4">
+                                    Detay
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>

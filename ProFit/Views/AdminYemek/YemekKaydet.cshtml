@@ -1,0 +1,67 @@
+﻿@using ProFit.Models.pro_fitdb
+@model foods
+@{
+    ViewBag.Title = "YemekKaydet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-md-6">
+    <div class="card">
+        @using (Html.BeginForm("YemekKaydet", "AdminYemek", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.food_ID)
+            <div class="card-body">
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.food_NAME, htmlAttributes: new { @class = "col-md-3 mt-3" })
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.food_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.food_CONTENT, htmlAttributes: new { @class = "col-md-3 mt-3" })
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.food_CONTENT, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.food_IMAGE, htmlAttributes: new { @class = "col-md-3 mt-3" })
+                    <div class="col-sm-9">
+
+                        <input type="file"
+                               class="custom-file-input"
+                               id="validatedCustomFile"
+                               name="file"
+                               required />
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.food_RECIPE, htmlAttributes: new { @class = "col-md-3 mt-3" })
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.food_RECIPE, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-primary">
+                            Kaydet
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+        }
+    </div>
+
+</div>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ProFit.Models.pro_fitdb.foods>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+
+    <div class="col-12">
+
+        <table class="table">
+            <div class="card-body">
+                <a href="../AdminYemek/YemekKaydet">
+                    <button type="submit"
+                            class="btn btn-cyan btn-sm text-white">
+                        Yemek ekle
+                    </button>
+                </a>
+            </div>
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.food_NAME) </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.food_CONTENT)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.food_IMAGE)   </th>
+                    <th scope="col"> @Html.DisplayNameFor(model => model.food_RECIPE)   </th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+
+                    <td>@Html.DisplayFor(modelItem => item.food_NAME)</td>
+                    <td>@Html.DisplayFor(modelItem => item.food_CONTENT)</td>
+                    <td>
+                        <img src="~/images/@item.food_IMAGE"
+                             alt="user"
+                             width="100"
+                             class="rounded-circle" />
+                    </td>
+
+                    <td>@Html.DisplayFor(modelItem => item.food_RECIPE)</td>
+
+
+                    <td>
+                        @Html.ActionLink("Güncelle", "FoodEdit", new { food_ID = item.food_ID })
+
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sil", "FoodDelete", new { food_ID = item.food_ID }, new { @class = "btn btn-danger btn-sm text-white" })
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+
+
