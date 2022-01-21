@@ -27,7 +27,7 @@
             <div class="row about">
                 @foreach(var item in Model) {
                 <div class="col-md-12 col-md-offset-0">
-                    <img class="img-responsive animate-box" src="../Content/images/makarna.jpg" alt="About">
+                    <img class="img-responsive animate-box" src="../Content/images/@item.food_IMAGE" alt="About">
                 </div>
                 <div class="col-md-12 col-md-offset-0 animate-box">
                     <p>@item.food_NAME</p>

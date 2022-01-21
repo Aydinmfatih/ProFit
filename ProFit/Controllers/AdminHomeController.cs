@@ -25,7 +25,7 @@ namespace ProFit.Controllers
                 {
                     quiz_answer_ID = Convert.ToInt32(rd["quiz_answer_ID"]),
                     quiz_question_ID = Convert.ToInt32(rd["quiz_question_ID"]),
-                    quiz_answer_MAIL = (rd["quiz_ANSWER1"]).ToString(),
+                    quiz_answer_MAIL = (rd["quiz_answer_MAIL"]).ToString(),
                     quiz_ANSWER1 = (rd["quiz_ANSWER1"]).ToString(),
                     quiz_ANSWER2 = (rd["quiz_ANSWER2"]).ToString(),
                     quiz_ANSWER3 = (rd["quiz_ANSWER3"]).ToString(),
@@ -87,7 +87,7 @@ namespace ProFit.Controllers
                 {
                     quiz_answer_ID = Convert.ToInt32(rd["quiz_answer_ID"]),
                     quiz_question_ID = Convert.ToInt32(rd["quiz_question_ID"]),
-                    quiz_answer_MAIL = (rd["quiz_ANSWER1"]).ToString(),
+                    quiz_answer_MAIL = (rd["quiz_answer_MAIL"]).ToString(),
                     quiz_ANSWER1 = (rd["quiz_ANSWER1"]).ToString(),
                     quiz_ANSWER2 = (rd["quiz_ANSWER2"]).ToString(),
                     quiz_ANSWER3 = (rd["quiz_ANSWER3"]).ToString(),

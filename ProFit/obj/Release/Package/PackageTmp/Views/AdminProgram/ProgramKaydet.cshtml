@@ -1,5 +1,5 @@
 ﻿@using ProFit.Models.pro_fitdb
-@model training_program
+@model Tuple<List<categories>, training_program>
 @{
     ViewBag.Title = "ProgramKaydet";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -12,30 +12,31 @@
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.training_ID)
+            @Html.HiddenFor(model => model.Item2.training_ID)
             <div class="card-body">
                 <div class="form-group row">
-                    @Html.LabelFor(model => model.category_ID, htmlAttributes: new { @class = "col-md-3 mt-3" })
+                    @Html.LabelFor(model => model.Item2.category_NAME, htmlAttributes: new { @class = "col-md-3 mt-3" })
                     <div class="col-sm-9">
-                        @Html.EditorFor(model => model.category_ID, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.DropDownList("categorys")
+                        @*@Html.EditorFor(model => model.item2.category_NAME, new { htmlAttributes = new { @class = "form-control" } })*@
                     </div>
 
                 </div>
                 <div class="form-group row">
-                    @Html.LabelFor(model => model.training_NAME, htmlAttributes: new { @class = "col-md-3 mt-3" })
+                    @Html.LabelFor(model => model.Item2.training_NAME, htmlAttributes: new { @class = "col-md-3 mt-3" })
                     <div class="col-sm-9">
-                        @Html.EditorFor(model => model.training_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Item2.training_NAME, new { htmlAttributes = new { @class = "form-control" } })
                     </div>
 
                     <div class="form-group row">
-                        @Html.LabelFor(model => model.training_DESCRIPTION, htmlAttributes: new { @class = "col-md-3 mt-3" })
+                        @Html.LabelFor(model => model.Item2.training_DESCRIPTION, htmlAttributes: new { @class = "col-md-3 mt-3" })
                         <div class="col-sm-9">
-                            @Html.EditorFor(model => model.training_DESCRIPTION, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.Item2.training_DESCRIPTION, new { htmlAttributes = new { @class = "form-control" } })
                         </div>
 
                     </div>
                     <div class="form-group row">
-                        @Html.LabelFor(model => model.training_IMAGE, htmlAttributes: new { @class = "col-md-3 mt-3" })
+                        @Html.LabelFor(model => model.Item2.training_IMAGE, htmlAttributes: new { @class = "col-md-3 mt-3" })
                         <div class="col-sm-9">
 
                             <input type="file"
@@ -47,16 +48,16 @@
 
                     </div>
                     <div class="form-group row">
-                        @Html.LabelFor(model => model.training_INFO, htmlAttributes: new { @class = "col-md-3 mt-3" })
+                        @Html.LabelFor(model => model.Item2.training_INFO, htmlAttributes: new { @class = "col-md-3 mt-3" })
                         <div class="col-sm-9">
-                            @Html.EditorFor(model => model.training_INFO, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.Item2.training_INFO, new { htmlAttributes = new { @class = "form-control" } })
                         </div>
 
                     </div>
                     <div class="form-group row">
-                        @Html.LabelFor(model => model.training_youtube_LINK, htmlAttributes: new { @class = "col-md-3 mt-3" })
+                        @Html.LabelFor(model => model.Item2.training_youtube_LINK, htmlAttributes: new { @class = "col-md-3 mt-3" })
                         <div class="col-sm-9">
-                            @Html.EditorFor(model => model.training_youtube_LINK, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.Item2.training_youtube_LINK, new { htmlAttributes = new { @class = "form-control" } })
                         </div>
 
                     </div>
